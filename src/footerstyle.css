@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+}
+
+.footer{
+    background-color: #000;
+    width: 100%;
+    height: 500px;
+    padding: 25px;
+    font-family: "DM Serif Text", serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.footer h4{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.footerList{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footerList h3{
+    color: rgb(150 150 150);
+    cursor: default;
+    font-family: "DM Serif Text", serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.suportList div{
+    padding-top: 10px;
+}
+
+.suportList div a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.about div{
+    padding-top: 10px;
+}
+
+.about div a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.services div{
+    padding-top: 10px;
+}
+
+.services div a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.assinatura{
+    padding-top: 50px;
+    color: #fff;
+    font-size: 150px;
+    font-family: "DM Serif Text", serif;
+    font-weight: normal;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}

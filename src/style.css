@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('footerstyle.css');
+@import url('main.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: #000;
+}
+
+:root{
+    --title-color-1: #000;
+    --title-color-2: #fff;
+    --title-font: 40px;
+    --sub-title-font: 22px;
+    --background-color-1: #fff;
+    --background-color-2: #000;
+    --background-color-menu:#f8f8ff;
+}
+
+h1{
+    color: var(--title-color-1);
+    font-size: var(--title-font);
+    font-family: "DM Serif Text", serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+h3{
+    color: var(--title-color-1);
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Estilização do header */
+
+:root{
+    --background-color: #fff;
+    --background_menu: #f8f8ff;
+    --title-color: #000;
+    --title-font: 40px;
+    --sub-title-font: 20px;
+}
+
+.header{
+    background-color: var(--background-color);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Configuração bnt Search */
+    .search_bnt{
+        display: flex;
+        position: absolute;
+        right: 25rem;
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+
+    .search_bnt_x{
+        display: none;
+        position: absolute;
+        right: 25rem;
+        font-size: 1.4rem;
+        cursor: pointer;
+        color: red;
+    }
+
+    .search_menu{
+        position: absolute;
+        display: none;
+        right: 17rem;
+        top: 4.4rem;
+        height: max-content;
+        width: 710px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-left: 20px;
+        background: var(--background_menu);
+        overflow: hidden;
+        border-radius: 0px 0px 5px 5px;
+
+        &>input{
+            position: relative;
+            height: 30px;
+            width: 90%;
+            padding: 5px;
+            border: 0;
+            background-color: var(--background_menu);
+            border-bottom: 1px solid rgb(200 200 200);
+            outline: 0;
+            font-family: "DM Serif Text", serif;
+            font-weight: 100;
+            font-style: normal;
+            font-size: 16px;
+
+            &:focus, &:valid{
+                border-bottom: 2px solid #000;
+            }
+        }
+
+        &>label{
+            position: absolute;
+            left: 20px;
+            color: rgb(150 150 150) ;
+            cursor: text;
+            transition: 0.5s ease-in-out;
+        }
+
+    }
+
+
+    .search_menu input:focus ~ label,
+    .search_menu input:valid ~ label{
+        transform: translateY(-18px);
+        font-size: 14px;
+        color: var(--title-color);
+    }
+
+/* Configuração bnt Cart */
+    .cart_bnt{
+        display: flex;
+        position: absolute;
+        right: 22.5rem;
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+
+    .cart_bnt_menu{
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .cart_bnt a, .cart_bnt_menu a{
+        color: var(--title-color);
+    }
+
+/* Configuração bnt User  */
+    .user_bnt{
+        display: flex;
+        position: absolute;
+        right: 20rem;
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+
+    .user_bnt_x{
+        display: none;
+        position: absolute;
+        right: 20rem;
+        font-size: 1.4rem;
+        cursor: pointer;
+        color: red;
+    }
+
+    .user_bnt a{
+        color: #000;
+    }
+
+    .user_menu{
+        position: absolute;
+        display: none;
+        right: 17rem;
+        top: 4.4rem;
+        height: max-content;
+        width: max-content;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        background: var(--background_menu);
+        overflow: hidden;
+        border-radius: 0px 0px 5px 5px;
+    }
+
+    .user_menu li a{
+        width: max-content;
+        color: var(--title-color);
+        text-decoration: none;
+        font-size: var(--sub-title-font);
+        font-family: "Fjalla One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .user_menu a:hover{
+        text-decoration: underline;
+    }
+
+    .user_menu li{
+        padding: 0.7rem;
+        padding-left: 1rem;
+        padding-right: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: left;
+    }
+
+/* Configuração bnt Menu */
+.toggle_btn {
+    color: var(--title-color);
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    right: 17.5rem;
+    top: 1.6rem;
+}
+
+.closeX_bnt{
+    color: var(--title-color);
+    font-size: var(--title-font);
+    width: max-content;
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    left: 90%;
+    transition: 0.5s;
+}
+
+.closeX_bnt:hover{
+    border: solid 0.5px #000;
+    border-radius: 25px;
+}
+
+.dropdown_menu {
+    position: absolute;
+    display: block;
+    right: -42.5rem;
+    top: 0px;
+    height: max-content;
+    width: 600px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background: var(--background_menu);
+    overflow: hidden;
+}
+
+.dropdown_menu li a{
+    width: max-content;
+    color: var(--title-color);
+    text-decoration: none;
+    font-size: var(--sub-title-font);
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.dropdown_menu li a:hover{
+    text-decoration: underline;
+}
+
+.dropdown_menu li {
+    padding: 0.7rem;
+    padding-left: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+@media (max-width: 768px) {
+    .title {
+        position: absolute;
+        right: 18rem;
+    }
+
+    .toggle_btn {
+        position: absolute;
+        right: 3rem;
+    }
+}
