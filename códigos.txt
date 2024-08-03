@@ -1,0 +1,2 @@
+css:
+pointerEvents(eu usei para desativar o click de alguns botoes)

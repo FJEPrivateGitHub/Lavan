@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavan</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="header" id="head">
+        <section>
+            <i class='bx bx-plus'></i>
+            <span>Contato</span>
+        </section>
+        <h1 id="title">Lavan</h1>
+        <section>
+            <div class="cart">
+                <div class="cart_bnt menu_btn">
+                    <a href="">
+                        <i class="ri-shopping-cart-2-line"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="search">
+                <div class="search_bnt menu_btn" onclick="ativar_menu(document.querySelector('.search > div:last-child'))">
+                    <i class="ri-search-line"></i>
+                </div>
+        
+                <div class="search_menu hidden_menu menu">
+                    <input required id="barra_pesquisa" type="text">
+                    <label for="barra_pesquisa">Oque está procurando?</label>
+                </div>
+            </div>
+            <div class="user">
+                <div class="user_bnt menu_btn" onclick="ativar_menu(document.querySelector('.user > div.user_menu'))">
+                    <i class="ri-user-line"></i>
+                </div>
+                <div class="user_menu hidden_menu menu">
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Sing Up</a></li>
+                    <li><a href="#">Favoritos</a></li>
+                    <li><a href="#">Meus Pedidos</a></li>
+                </div>
+            </div>
+            <div class="side-menu">
+                <div id="dropdown_btn" class="toggle_btn menu_btn" onclick="ativar_menu(document.querySelector('.side-menu > .dropdown_menu'))">
+                    <i class="ri-menu-line"></i>
+                </div>
+                <div class="dropdown_menu hidden_menu menu">
+                    <div class="closeX_bnt" onclick="ativar_menu(document.querySelector('.dropdown_menu'))">
+                        <i class='bx bx-x'></i>
+                    </div>
+                    <ul>
+                        <li><a href="#">Add Link</a></li>
+                        <li><a href="#">Add Link</a></li>
+                        <li><a href="#">Add Link</a></li>
+                    </ul>
+                    <div class="cart_bnt_menu">
+                        <a href="#"><i class='bx bx-cart'></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <script src="src/headscripts.js"></script>
