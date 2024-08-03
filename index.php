@@ -8,6 +8,6 @@
     ?>
 </main>
 
-<?php
+<!-- <?php
     include('src/footer.html')
-?>  
+?>    -->

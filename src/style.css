@@ -8,7 +8,6 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 body{
@@ -19,6 +18,7 @@ body{
     --title-color-1: #000;
     --title-color-2: #fff;
     --title-font: 40px;
+    --font-family-primary: "DM Serif Text", serif;
     --sub-title-font: 22px;
     --background-color-1: #fff;
     --background-color-2: #000;
@@ -28,14 +28,14 @@ body{
 h1{
     color: var(--title-color-1);
     font-size: var(--title-font);
-    font-family: "DM Serif Text", serif;
+    font-family: var(--font-family-primary);
     font-weight: normal;
     font-style: normal;
 }
 
 h3{
     color: var(--title-color-1);
-    font-family: "DM Serif Text", serif;
+    font-family: var(--font-family-primary);
     font-weight: 400;
     font-style: normal;
 }
@@ -54,220 +54,124 @@ h3{
     background-color: var(--background-color);
     width: 100%;
     height: 70px;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    justify-items: center;
     align-items: center;
-}
-/* Configuração bnt Search */
-    .search_bnt{
-        display: flex;
-        position: absolute;
-        right: 25rem;
-        font-size: 1.4rem;
-        cursor: pointer;
-    }
 
-    .search_bnt_x{
-        display: none;
-        position: absolute;
-        right: 25rem;
-        font-size: 1.4rem;
-        cursor: pointer;
-        color: red;
-    }
-
-    .search_menu{
-        position: absolute;
-        display: none;
-        right: 17rem;
-        top: 4.4rem;
-        height: max-content;
-        width: 710px;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        padding-left: 20px;
-        background: var(--background_menu);
-        overflow: hidden;
-        border-radius: 0px 0px 5px 5px;
-
-        &>input{
-            position: relative;
-            height: 30px;
-            width: 90%;
-            padding: 5px;
-            border: 0;
-            background-color: var(--background_menu);
-            border-bottom: 1px solid rgb(200 200 200);
-            outline: 0;
-            font-family: "DM Serif Text", serif;
-            font-weight: 100;
-            font-style: normal;
-            font-size: 16px;
-
-            &:focus, &:valid{
-                border-bottom: 2px solid #000;
-            }
-        }
-
-        &>label{
-            position: absolute;
-            left: 20px;
-            color: rgb(150 150 150) ;
-            cursor: text;
-            transition: 0.5s ease-in-out;
-        }
-
-    }
-
-
-    .search_menu input:focus ~ label,
-    .search_menu input:valid ~ label{
-        transform: translateY(-18px);
-        font-size: 14px;
-        color: var(--title-color);
-    }
-
-/* Configuração bnt Cart */
-    .cart_bnt{
-        display: flex;
-        position: absolute;
-        right: 22.5rem;
-        font-size: 1.4rem;
-        cursor: pointer;
-    }
-
-    .cart_bnt_menu{
-        font-size: 2rem;
-        cursor: pointer;
-    }
-
-    .cart_bnt a, .cart_bnt_menu a{
-        color: var(--title-color);
-    }
-
-/* Configuração bnt User  */
-    .user_bnt{
-        display: flex;
-        position: absolute;
-        right: 20rem;
-        font-size: 1.4rem;
-        cursor: pointer;
-    }
-
-    .user_bnt_x{
-        display: none;
-        position: absolute;
-        right: 20rem;
-        font-size: 1.4rem;
-        cursor: pointer;
-        color: red;
-    }
-
-    .user_bnt a{
-        color: #000;
-    }
-
-    .user_menu{
-        position: absolute;
-        display: none;
-        right: 17rem;
-        top: 4.4rem;
-        height: max-content;
-        width: max-content;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        background: var(--background_menu);
-        overflow: hidden;
-        border-radius: 0px 0px 5px 5px;
-    }
-
-    .user_menu li a{
-        width: max-content;
-        color: var(--title-color);
-        text-decoration: none;
-        font-size: var(--sub-title-font);
-        font-family: "Fjalla One", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-    }
-
-    .user_menu a:hover{
-        text-decoration: underline;
-    }
-
-    .user_menu li{
-        padding: 0.7rem;
-        padding-left: 1rem;
-        padding-right: 2rem;
+    & > section:first-child{
+        font-family: var(--font-family-primary);
         display: flex;
         align-items: center;
-        justify-content: left;
+        justify-content: center;
+
+        & > span{
+            margin-left: 5px;
+        }
     }
 
-/* Configuração bnt Menu */
-.toggle_btn {
-    color: var(--title-color);
-    font-size: 1.3rem;
-    cursor: pointer;
-    display: flex;
-    position: absolute;
-    right: 17.5rem;
-    top: 1.6rem;
+    & > h1{
+        letter-spacing: 5px;
+    }
+
+    & > section:last-child{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-content: center;
+        justify-items: center;
+        gap: 5px;
+
+        & > div{
+            align-items: center;
+            justify-content: center;
+            
+            & > div:first-child{
+                cursor: pointer;
+            }
+
+            & > .ativo{
+                display: block;
+                &.dropdown_menu{
+                    animation: surgir 1s ease forwards;
+                }
+            }
+
+            & > .hidden_menu{
+                &.dropdown_menu{
+                    animation: sair 1s ease forwards;
+                }
+                &:not(.dropdown_menu){
+                    display: none;
+                }
+            }
+
+            & > .menu_btn, & > .cart_btn{
+                & > a{
+                    text-decoration: none;
+                    color: black;
+                }
+                font-size: 20px;
+            }
+
+            & > .menu{
+                position: fixed;
+                z-index: 10;
+                background-color: white;
+
+                &.dropdown_menu{
+                    right: 0;
+                    top: 0;
+                    width: 25vw;
+                    height: 100vh;
+                    padding: 20px;
+                    transition: 1s ease;
+
+                    & > div:first-child{
+                        text-align: left;
+
+                        & > i{
+                            font-size: 2em;
+                            cursor: pointer;
+                        }
+                    }
+
+                    & > ul{
+                        list-style: none;
+                        & > li{
+                            margin-block: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
-.closeX_bnt{
-    color: var(--title-color);
-    font-size: var(--title-font);
-    width: max-content;
-    cursor: pointer;
-    display: flex;
-    position: relative;
-    left: 90%;
-    transition: 0.5s;
+@keyframes surgir {
+    0%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
-.closeX_bnt:hover{
-    border: solid 0.5px #000;
-    border-radius: 25px;
+@keyframes sair {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(100%);
+        display: none;
+    }
 }
 
-.dropdown_menu {
-    position: absolute;
-    display: block;
-    right: -42.5rem;
-    top: 0px;
-    height: max-content;
-    width: 600px;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    background: var(--background_menu);
-    overflow: hidden;
-}
-
-.dropdown_menu li a{
-    width: max-content;
-    color: var(--title-color);
-    text-decoration: none;
-    font-size: var(--sub-title-font);
-    font-family: "Fjalla One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.dropdown_menu li a:hover{
-    text-decoration: underline;
-}
-
-.dropdown_menu li {
-    padding: 0.7rem;
-    padding-left: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-}
 
 @media (max-width: 768px) {
     .title {
+        display: block;
         position: absolute;
         right: 18rem;
     }
